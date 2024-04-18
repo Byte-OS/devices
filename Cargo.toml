@@ -13,6 +13,6 @@ fdt = "0.1.5"
 linkme = { version = "0.3.22", features = ["used_linker"] }
 log = "0.4"
 sync = { git = "https://github.com/Byte-OS/sync.git" }
-virtio-drivers = { git = "https://github.com/rcore-os/virtio-drivers", rev = "f1d1cbb"}
+virtio-drivers = { git = "https://github.com/rcore-os/virtio-drivers", rev = "61ece50"}
 frame_allocator = { git = "https://github.com/Byte-OS/bit_frame_allocator.git" }
 timestamp = { git = "https://github.com/Byte-OS/timestamp.git" }
