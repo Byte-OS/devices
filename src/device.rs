@@ -71,6 +71,9 @@ pub trait RtcDriver: Driver {
 pub trait BlkDriver: Driver {
     fn read_blocks(&self, block_id: usize, buf: &mut [u8]);
     fn write_blocks(&self, block_id: usize, buf: &[u8]);
+    fn capacity(&self) -> usize {
+        0
+    }
 }
 
 #[derive(Debug)]
