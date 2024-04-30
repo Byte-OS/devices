@@ -12,7 +12,7 @@ extern crate alloc;
 pub mod device;
 pub mod utils;
 
-pub use arch::{PAGE_SIZE, VIRT_ADDR_START};
+pub use polyhal::{PAGE_SIZE, VIRT_ADDR_START};
 pub use fdt;
 pub use frame_allocator::{frame_alloc, frame_alloc_much, FrameTracker};
 pub use linkme::{self, distributed_slice as linker_use};

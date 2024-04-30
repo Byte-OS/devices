@@ -1,4 +1,4 @@
-use arch::pagetable::PageTable;
+use polyhal::pagetable::PageTable;
 
 /// Translate virtual address into physical address in the current virtual address space
 ///
