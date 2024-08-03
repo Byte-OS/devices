@@ -12,7 +12,10 @@ extern crate alloc;
 pub mod device;
 pub mod utils;
 
-pub use polyhal::{PAGE_SIZE, VIRT_ADDR_START};
+pub use polyhal::{
+    pagetable::PAGE_SIZE,
+    consts::VIRT_ADDR_START
+};
 pub use fdt;
 pub use frame_allocator::{frame_alloc, frame_alloc_much, FrameTracker};
 pub use linkme::{self, distributed_slice as linker_use};
@@ -91,7 +94,10 @@ pub fn init_device(device_tree: usize) {
 #[inline]
 pub fn prepare_drivers() {
     DRIVERS_INIT.iter().for_each(|f| {
-        f().map(|device| ALL_DEVICES.lock().add_device(device));
+        f().map(|device| {
+            log::debug!("init driver: {}", device.get_id());
+            ALL_DEVICES.lock().add_device(device);
+        });
     });
 }
 
